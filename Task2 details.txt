@@ -1,0 +1,40 @@
+Task 2
+-------
+gradletest.java 
+--------------
+package demo;
+
+class gradletest	
+{
+	public static void main(String[] args) 
+	{
+		String name = args[0];
+		if(name != "")
+		{
+			System.out.println("Hello "+name);
+		}
+		else
+		{
+			System.out.println("Hello World");
+		}
+	}
+}
+
+Build.gradle
+------------
+apply plugin : 'java'
+
+apply plugin : 'application'
+
+mainClassName='demo.gradletest'
+
+run {
+    if (project.hasProperty("EnterName")) 
+	{
+		args Eval.me(EnterName)
+	}
+}
+
+CMD : gradle run
+----------
+gradle run -PEnterName="['Mayur']"
