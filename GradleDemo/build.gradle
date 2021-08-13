@@ -1,0 +1,12 @@
+apply plugin : 'java'
+
+apply plugin : 'application'
+
+mainClassName='demo.gradletest'
+
+run {
+    if (project.hasProperty("EnterName")) 
+	{
+		args Eval.me(EnterName)
+	}
+}
